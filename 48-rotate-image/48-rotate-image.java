@@ -11,6 +11,7 @@ class Solution {
                 mat[j][i]=t;
             }
         }
+        //Reverseing the rows 
         for(int i=0;i<n;i++)
         {
             int s=0;
