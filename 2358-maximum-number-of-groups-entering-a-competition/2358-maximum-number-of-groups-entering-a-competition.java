@@ -2,8 +2,8 @@
 class Solution {
     public int maximumGroups(int[] grades) {
         
-        int s=grades.length;
-        return (-1+(int)Math.sqrt(1+8*s))/2;
+        //int s=grades.length;
+        return (-1+(int)Math.sqrt(1+8*grades.length))/2;
     }
 }
 /*
