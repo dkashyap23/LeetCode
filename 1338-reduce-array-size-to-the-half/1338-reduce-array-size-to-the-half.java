@@ -14,11 +14,7 @@ class Solution {
             temp[x++]=k;
         }
         Arrays.sort(temp);
-       // System.out.println(req_size);
-        // for(int i=0;i<temp.length;i++)
-        // {
-        //     System.out.print(temp[i]+" ");
-        // }
+       
         int sum=0;
         for(int i=temp.length-1;i>=0;i--)
         {
