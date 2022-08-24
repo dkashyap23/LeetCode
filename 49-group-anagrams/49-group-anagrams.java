@@ -1,28 +1,32 @@
+//https://www.youtube.com/watch?v=NNBQik4phMI
 class Solution {
     public List<List<String>> groupAnagrams(String[] strs) {
-        HashMap<HashMap<Character,Integer>,ArrayList<String>> bmap=new HashMap<>();
+        HashMap<String,List<String>> bmap=new HashMap<>();
         for(String str:strs)
         {
-            HashMap<Character,Integer> fre=new HashMap<>();
-            for(int i=0;i<str.length();i++)
+            char[] c=str.toCharArray();
+            Arrays.sort(c);
+            // HashMap<Character,Integer> fre=new HashMap<>();
+            // for(int i=0;i<str.length();i++)
+            // {
+            //     char c=str.charAt(i);
+            //     fre.put(c,fre.getOrDefault(c,0)+1);
+            // }
+            String charString=new String(c);
+            if(bmap.containsKey(charString))
             {
-                char c=str.charAt(i);
-                fre.put(c,fre.getOrDefault(c,0)+1);
-            }
-            if(bmap.containsKey(fre))
-            {
-                ArrayList<String> temp=bmap.get(fre);
+                List<String> temp=bmap.get(charString);
                 temp.add(str);
             }
             else
             {
-                ArrayList<String> temp=new ArrayList<>();
+                List<String> temp=new ArrayList<>();
                 temp.add(str);
-                bmap.put(fre,temp);
+                bmap.put(charString,temp);
             }
         }
         List<List<String>> ans=new ArrayList<>();
-        for(ArrayList<String> i:bmap.values())
+        for(List<String> i:bmap.values())
             ans.add(i);
         return ans;
         
