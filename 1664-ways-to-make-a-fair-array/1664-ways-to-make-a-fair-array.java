@@ -19,12 +19,7 @@ class Solution {
             else
                 pre_odd_sum[i]=pre_odd_sum[i-1];
         }
-        // for(int i=0;i<n;i++)
-        //     System.out.print(pre_even_sum[i]+" ");
-        // System.out.println();
-        // for(int i=0;i<n;i++)
-        //     System.out.print(pre_odd_sum[i]+" ");
-        // System.out.println();
+        
         int ans=0;
         for(int i=0;i<n;i++)
         {
@@ -45,7 +40,6 @@ class Solution {
                 even_sum=pre_even_sum[i-1]+(pre_odd_sum[n-1]-pre_odd_sum[i]);
                 odd_sum=pre_odd_sum[i-1]+(pre_even_sum[n-1]-pre_even_sum[i]);
             }
-           // System.out.println(i+" "+even_sum+" "+odd_sum);
             if(even_sum==odd_sum)
                 ans++;
         }
