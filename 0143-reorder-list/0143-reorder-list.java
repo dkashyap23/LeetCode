@@ -34,18 +34,10 @@ class Solution {
         return prev;
     }
     public void reorderList(ListNode head) {
-        //ListNode temp=head;
         ListNode head1=head;
         ListNode mid=middle(head);
-        ListNode midnext=mid.next;
+        ListNode head2=reverse(mid.next);
         mid.next=null;
-        ListNode head2=reverse(midnext);
-        // while(head2!=null)
-        // {
-        //     System.out.print(head2.val+" ");
-        //     head2=head2.next;
-        // }
-        //System.out.println(head2.val);
         while(head2!=null)
         {
             ListNode t1=head2.next;
@@ -54,6 +46,5 @@ class Solution {
             head2=t1;
             head1=head1.next.next;
         }
-        //return ans;
     }
 }
