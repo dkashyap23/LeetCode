@@ -4,20 +4,9 @@ class Solution {
         for(int i=0;i<s.length();i++)
         {
             char c=s.charAt(i);
-            boolean flag=false;
-            while(!st.isEmpty())
-            {
-                char top=st.peek();
-                if(Math.abs(top-c)==32)
-                {
-                    System.out.println(top+" "+c);
-                    st.pop();
-                    flag=true;
-                }
-    
-                    break;
-            }
-           if(flag==false)
+            if(!st.isEmpty() && Math.abs(st.peek()-c)==32)
+                st.pop();
+            else
                 st.push(c);
         }
         StringBuilder ans=new StringBuilder("");
