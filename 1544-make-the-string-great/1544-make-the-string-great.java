@@ -20,13 +20,13 @@ class Solution {
            if(flag==false)
                 st.push(c);
         }
-        String ans="";
+        StringBuilder ans=new StringBuilder("");
         while(!st.isEmpty())
         {
-            ans=st.peek()+ans;
+            ans.insert(0,st.peek());
             st.pop();
         }
-        return ans;
+        return ans.toString();
     }
 }
 /*
